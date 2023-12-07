@@ -1,4 +1,4 @@
 # ProLog-20121041
 
 
-### All class tasks can be found on the "tarea" folder
+### The class assignments can be found on the "tarea" folder
