@@ -106,22 +106,35 @@ template([dime, que, es, lo,que,sabes,'?'], ["I'm inside your walls... you can g
 
 % Reglas para preguntas y respuestas sobre Destiny
 
-template([quién, es, cayde_6, en, Destiny, '?'], ['Cayde-6 es un personaje carismático en Destiny, conocido por su humor y habilidades como Cazador.'], [1]).
+template([quien, desarrollo, destiny,'?'],["El desarrollador de Destiny es Bungie y publicado por el mismo."],[]).
 
-template([quién, es, zavala, en, Destiny, '?'], ['Zavala es un personaje serío en Destiny, conocido por su habilidad de dirigir y habilidades como Titan; Actualmente es el eje principal de los guardianes.'], [2]).
+template([que, clases, hay, en, destiny,'?'],["Actualmete hay 3 clases, cazador, titan y hechicero."],[]).
 
-template([quién, es, ikora_rey, en, Destiny, '?'], ['Ikora Rey es una hechicera discípula de Osiris que tomo su manto después de ser desterrado por primera vez, es conocida por ser "invencible" en el crisol.'], [3]).
+template([que, hace, un, cazador,'?'],["El cazador es una clase de control y single-target dmg. Enfocado principalmente en la ágilidad y dps."],[]).
 
-template([quién, es, osiris, en, Destiny, '?'], ['Osiris es un personaje que solia ser egocentrico, conocido por sus habilidades y gran conocimiento.'], [4]).
+template([que, hace, un, titan,'?'],["El titan es una clase de control y defensa. Enfocado principalmente en la resilencia y control."],[]).
 
-template([cuáles, son, algunas, armas, excepcionales, en, Destiny, '?'], ['Algunas armas excepcionales en Destiny incluyen la Última palabra, Espino, Gjallahorn y La muerte roja.'], [5]).
+template([que, hace, un, hechicero,'?'],["El hechicero es una clase de apoyo y aoe dmg. Enfocado principalmente en la recuperación/support y dps."],[]).
 
-template([cuáles, son, las, clasificaciones, de, armas, en, Destiny, '?'], ['Las clasificaciones de armas en Destiny incluyen el tipo de daño elemental y el tipo de arma. Por ejemplo, el Whisper of The Worm es un rifle de francotirador solar.'], [6]).
+template([quien, es, cayde6, en, destiny, '?'], ['Cayde-6 es un personaje carismático en Destiny, conocido por su humor y habilidades como Cazador.'], []).
 
-template([qué, tipo, de, daño, elemental, tiene, el, arma, excepcional, X, en, Destiny, '?'], ['El arma excepcional ', X, ' tiene daño elemental ', Tipo, '.'], [7]):-
+template([quien, es, zavala, en, destiny, '?'], ['Zavala es un personaje serío en Destiny, conocido por su habilidad de dirigir y habilidades como Titan; Actualmente es el eje principal de los guardianes.'], []).
+
+template([quien, es, ikora_rey, en, destiny, '?'], ['Ikora Rey es una hechicera discípula de Osiris que tomo su manto después de ser desterrado por primera vez, es conocida por ser "invencible" en el crisol.'], []).
+
+template([quien, es, osiris, en, destiny, '?'], ['Osiris es un personaje que solia ser egocentrico, conocido por sus habilidades y gran conocimiento.'], []).
+
+template([cuales, son, algunas, armas, excepcionales, en, destiny, '?'], ['Algunas armas excepcionales en Destiny incluyen la Última palabra, Espino, Gjallahorn y La muerte roja.'], []).
+
+template([cuales, son, las, clasificaciones, de, armas, en, destiny, '?'], ['Las clasificaciones de armas en Destiny incluyen el tipo de daño elemental y el tipo de arma. Por ejemplo, el Whisper of The Worm es un rifle de francotirador solar.'], []).
+
+template([que, tipo, de, dano, elemental, tiene, el, arma, excepcional, X, en, destiny, '?'], ['El arma excepcional ', X, ' tiene daño elemental ', Tipo, '.'], [9]):-
     clasificacion_arma(X, [Tipo, _]).
 
-template([qué, tipo, de, arma, es, el, arma, excepcional, X, en, Destiny, '?'], ['El arma excepcional ', X, ' es de tipo ', Tipo, '.'], [8]):-
+template([que, tipo, de, arma, es, el, arma, excepcional, X, en, destiny, '?'], ['El arma excepcional ', X, ' es de tipo ', Tipo, '.'], [8]):-
+    clasificacion_arma(X, [_, Tipo]).
+
+template([que, tipo, de, arma, es, X, en, destiny, '?'], ['El arma excepcional ', X, ' es de tipo ', Tipo, '.'], [5]):-
     clasificacion_arma(X, [_, Tipo]).
 
 
@@ -157,13 +170,13 @@ tratamiento(polio, vacunación_preventiva).
 
 % Reglas para preguntas y respuestas sobre el polio
 
-template([qué, es, el, polio, '?'], ['La polio es una enfermedad viral causada por el virus de la polio, que puede afectar el sistema nervioso y causar síntomas como fiebre, dolor muscular y, en casos graves, parálisis.'], [1]).
+template([que, es, el, polio, '?'], ['La polio es una enfermedad viral causada por el virus de la polio, que puede afectar el sistema nervioso y causar síntomas como fiebre, dolor muscular y, en casos graves, parálisis.'], []).
 
-template([cuáles, son, los, síntomas, de, el, polio, '?'], ['Los síntomas de la polio pueden incluir fiebre, dolor muscular, debilidad, fatiga, rigidez en el cuello y, en casos graves, parálisis.'], [2]).
+template([cuales, son, los, sintomas, de, el, polio, '?'], ['Los síntomas de la polio pueden incluir fiebre, dolor muscular, debilidad, fatiga, rigidez en el cuello y, en casos graves, parálisis.'], []).
 
-template([cuáles, son, las, causas, de, el, polio, '?'], ['Las principales causas de la polio incluyen la infección por el virus de la polio, la falta de vacunación, el contacto con personas enfermas y condiciones insatisfactorias de saneamiento.'], [3]).
+template([cuales, son, las, causas, de, el, polio, '?'], ['Las principales causas de la polio incluyen la infección por el virus de la polio, la falta de vacunación, el contacto con personas enfermas y condiciones insatisfactorias de saneamiento.'], []).
 
-template([cómo, se, trata, el, polio, '?'], ['El tratamiento de la polio puede incluir fisioterapia, cuidados respiratorios, apoyo nutricional, medicamentos para aliviar síntomas y vacunación preventiva.'], [4]).
+template([como, se, trata, el, polio, '?'], ['El tratamiento de la polio puede incluir fisioterapia, cuidados respiratorios, apoyo nutricional, medicamentos para aliviar síntomas y vacunación preventiva.'], []).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -250,20 +263,20 @@ replace0([I|_], Input, _, Resp, R):-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
 % pertenece personaje a la base de conocimiento
 espersonaje(X, R):- personaje_destiny(X), R = ['Si', X, es, un, personaje, en, destiny,].
 espersonaje(X, R):- \+personaje_destiny(X), R = ['No', X, no, es, un, personaje, en, destiny,].
 
 
 
-%es un personaje:
+% es un personaje:
 replace0([I|_], Input, _, Resp, R):-
-	nth0(I, Input, Atom),
-	nth0(0, Resp, X),
-	X == flagpersonaje,
-	espersonaje(Atom, R).
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagpersonaje,
+    espersonaje(Atom, R).
+
+
 
 
 
@@ -271,12 +284,14 @@ replace0([I|_], Input, _, Resp, R):-
 esarma(X, R):- arma_excepcional(X), R = ['Si', X, es, un, arma, en, destiny,].
 esarma(X, R):- \+arma_excepcional(X), R = ['No', X, no, es, un, arma, en, destiny,].
 
-%es un arma:
+
+
+% es un arma:
 replace0([I|_], Input, _, Resp, R):-
-	nth0(I, Input, Atom),
-	nth0(0, Resp, X),
-	X == flagarma,
-	esarma(Atom, R).
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagarma,
+    esarma(Atom, R).
 
 
 
@@ -308,3 +323,4 @@ replace0([I|Index], Input, N, Resp, R):-
 	select(N, Resp, Atom, R1),
 	N1 is N + 1,
 	replace0(Index, Input, N1, R1, R),!.
+
