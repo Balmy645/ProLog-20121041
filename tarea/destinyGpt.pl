@@ -7,6 +7,15 @@ personaje_destiny(zavala).
 personaje_destiny(ikora_rey).
 personaje_destiny(osiris).
 personaje_destiny(ana_bray).
+personaje_destiny(lord_shaxx).
+personaje_destiny(eris_morn).
+personaje_destiny(banshee-44).
+personaje_destiny(master_rahool).
+personaje_destiny(eva_levante).
+personaje_destiny(xur).
+personaje_destiny(petra).
+personaje_destiny(saladin).
+
 
 % Hechos sobre armas excepcionales en Destiny
 arma_excepcional(divinity).
@@ -28,11 +37,60 @@ arma_excepcional(parasite).
 arma_excepcional(truth).
 arma_excepcional(the_lament).
 arma_excepcional(telesto).
+arma_excepcional(edge_of_action).
+arma_excepcional(quicksilver_storm).
+arma_excepcional(wish_ender).
+arma_excepcional(wish_keeper).
+arma_excepcional(bastion).
+arma_excepcional(witherhoard).
+arma_excepcional(malfeasence).
+arma_excepcional(arbalest).
+arma_excepcional(badjuju).
+arma_excepcional(mida_multi_tool).
+arma_excepcional(rat_king).
+arma_excepcional(centrifuse).
+arma_excepcional(ex_dris).
+arma_excepcional(erianas_vow).
+arma_excepcional(duality).
+arma_excepcional(buried_bloodline).
+arma_excepcional(the_fourth_horseman).
+arma_excepcional(trespasser).
+arma_excepcional(borealis).
+arma_excepcional(cloudstrike).
+arma_excepcional(coldheart).
+arma_excepcional(anarchy).
+arma_excepcional(eyes_of_tomorrow).
+arma_excepcional(two_tailed_fox).
+arma_excepcional(black_talon).
 
 
 % Hechos sobre clasificaciones de armas en Destiny
 
-clasificacion_arma(divinity, [arc, trace_Rifle]).
+clasificacion_arma(black_talon, [void, sword]).
+clasificacion_arma(two_tailed_fox, [asv, lanza_cohetes]).
+clasificacion_arma(eyes_of_tomorrow, [solar, lanza_cohetes]).
+clasificacion_arma(anarchy, [arc, lanza_granadas]).
+clasificacion_arma(coldheart, [arc, trace_rifle]).
+clasificacion_arma(cloudstrike, [arc, rifle_de_francotirador]).
+clasificacion_arma(borealis, [asv, rifle_de_francotirador]).
+clasificacion_arma(trespasser, [arc, shotgun]).
+clasificacion_arma(the_fourth_horseman, [arc, shotgun]).
+clasificacion_arma(buried_bloodline, [void, sidearm]).
+clasificacion_arma(duality, [solar, shotgun]).
+clasificacion_arma(erianas_vow, [solar, cañon_de_mano]).
+clasificacion_arma(ex_dris, [arc, lanza_granadas]).
+clasificacion_arma(centrifuse, [arc, rifle_automatico]).
+clasificacion_arma(rat_king, [cinetico, sidearm]).
+clasificacion_arma(mida_multi_tool, [cinetico, scout_rifle]).
+clasificacion_arma(badjuju, [cinetico, rifle_de_pulsos]).
+clasificacion_arma(arbalest, [cinetico, lineal_fusion_rifle]).
+clasificacion_arma(malfeasence, [cinetico, cañon_de_mano]).
+clasificacion_arma(witherhoard, [cinetico, lanza_granadas]).
+clasificacion_arma(bastion, [cinetico, fusion_rifle]).
+clasificacion_arma(wish_keeper, [strand, arco]).
+clasificacion_arma(wish_ender, [cinetico, arco]).
+clasificacion_arma(quicksilver_storm, [strand, rifle_automatico]).
+clasificacion_arma(divinity, [arc, trace_rifle]).
 clasificacion_arma(cerberus+1, [cinetico, rifle_automatico]).
 clasificacion_arma(riskrunner, [arc, smg]).
 clasificacion_arma(necrochasm, [cinetico, rifle_automatico]).
@@ -46,12 +104,13 @@ clasificacion_arma(gjallahorn, [solar, lanza_cohetes]).
 clasificacion_arma(outbreak_perfected, [cinetico, rifle_de_pulsos]).
 clasificacion_arma(wicked_implement, [stasis, scout_rifle]).
 clasificacion_arma(vex_mythoclast, [solar, fusion_rifle]).
-clasificacion_arma(parasite, [solar, lanza_Granadas]).
-clasificacion_arma(truth, [void, lanza_Cohetes]).
+clasificacion_arma(parasite, [solar, lanza_granadas]).
+clasificacion_arma(truth, [void, lanza_cohetes]).
 clasificacion_arma(the_lament, [solar, sword]).
 clasificacion_arma(telesto, [void, fusion_rifle]).
 clasificacion_arma(sleeper_simulant, [solar, lineal_fusion_rifle]).
 clasificacion_arma(gjallahorn, [solar, lanza_cohetes]).
+clasificacion_arma(edge_of_action, [void, glaive]).
 
 
 
@@ -124,19 +183,33 @@ template([quien, es, ikora_rey, en, destiny, '?'], ['Ikora Rey es una hechicera 
 
 template([quien, es, osiris, en, destiny, '?'], ['Osiris es un personaje que solia ser egocentrico, conocido por sus habilidades y gran conocimiento.'], []).
 
+template([quien, es, ana_bray, en, destiny, '?'], ['Ana Bray es una cazadora, conocido por sus habilidades y por ser desarrolladora de Rasputin.'], []).
+
+template([quien, es, lord_shaxx, en, destiny, '?'], ['Lord Shaxx es el director del crisol y un antiguo WarLord de la epoca oscura. Parece que nunca se quita su casco...'], []).
+
+template([quien, es, eris_morn, en, destiny, '?'], ['Eris es una diosa (mas poderosa) de la colmena, Su relacion con la colmena empezo al ser la unica sobreviviente de su escuadra al adentrarse a la boca del infierno.'], []).
+
+template([quien, es, xur , en, destiny, '?'], ['Un comerciante deambulante de los nueves. Su voluntad no le pertenece.'], []).
+
+template([quien, es, petra, en, destiny, '?'], ['Petra es una Insomne, la cual porta el titulo de furia de la reina.'], []).
+
+template([quien, es, saladin, en, destiny, '?'], ['Saladin era un WarLord y fundo a los señores de Hierro. Actualmente él junto a Lady Effredit (y el guardian) son los unicos señores de hierro con vida actualmente.'], []).
+
+
+
 template([cuales, son, algunas, armas, excepcionales, en, destiny, '?'], ['Algunas armas excepcionales en Destiny incluyen la Última palabra, Espino, Gjallahorn y La muerte roja.'], []).
 
 template([cuales, son, las, clasificaciones, de, armas, en, destiny, '?'], ['Las clasificaciones de armas en Destiny incluyen el tipo de daño elemental y el tipo de arma. Por ejemplo, el Whisper of The Worm es un rifle de francotirador solar.'], []).
 
-template([que, tipo, de, dano, elemental, tiene, el, arma, excepcional, X, en, destiny, '?'], ['El arma excepcional ', X, ' tiene daño elemental ', Tipo, '.'], [9]):-
+template([que, tipo, de, dano, elemental, tiene, el, arma, excepcional, X, '?'], ['El arma excepcional ', X, ' tiene daño elemental ', Tipo, '.'], [9]):-
     clasificacion_arma(X, [Tipo, _]).
 
-template([que, tipo, de, arma, es, el, arma, excepcional, X, en, destiny, '?'], ['El arma excepcional ', X, ' es de tipo ', Tipo, '.'], [8]):-
+template([que, tipo, de, arma, es, el, arma, excepcional, X, '?'], ['El arma excepcional ', X, ' es de tipo ', Tipo, '.'], [8]):-
     clasificacion_arma(X, [_, Tipo]).
 
-template([que, tipo, de, arma, es, X, en, destiny, '?'], ['El arma excepcional ', X, ' es de tipo ', Tipo, '.'], [5]):-
-    clasificacion_arma(X, [_, Tipo]).
-
+template([que, tipo, de, arma, es, Arma, '?'], Respuesta, [5]):-
+    clasificacion_arma(Arma, [TipoDeDanio, TipoDeArma]),
+    Respuesta = ['El arma excepcional ', Arma, ' es de tipo ', TipoDeDanio, ' y es un/a ', TipoDeArma, '.'].
 
 template([es, s(_), un, personaje, en, destiny,'?'], [flagpersonaje], [1]).
 
@@ -252,20 +325,20 @@ match([S|Stim],[_|Input]) :-
 	\+atom(S),
 	match(Stim, Input),!.
 
-replace0([], _, _, Resp, R):- append(Resp, [], R),!.
+% replace0/5 simplificado
+replace0([], _, _, Resp, Resp).
 
-% Eliza likes:
-replace0([I|_], Input, _, Resp, R):-
-	nth0(I, Input, Atom),
-	nth0(0, Resp, X),
-	X == flagLike,
-	elizaLikes(Atom, R).
+replace0([I|Index], Input, N, Resp, R):-
+    nth0(I, Input, Atom),
+    select(N, Resp, Atom, R1),
+    N1 is N + 1,
+    replace0(Index, Input, N1, R1, R).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % pertenece personaje a la base de conocimiento
-espersonaje(X, R):- personaje_destiny(X), R = ['Si', X, es, un, personaje, en, destiny,].
-espersonaje(X, R):- \+personaje_destiny(X), R = ['No', X, no, es, un, personaje, en, destiny,].
+espersonaje(X, R):- personaje_destiny(X), R = ['Si', X, es, un, personaje, en, destiny].
+espersonaje(X, R):- \+personaje_destiny(X), R = ['No', X, no, es, un, personaje, en, destiny].
 
 
 
@@ -281,8 +354,8 @@ replace0([I|_], Input, _, Resp, R):-
 
 
 % las armas en destiny: flagelarma
-esarma(X, R):- arma_excepcional(X), R = ['Si', X, es, un, arma, en, destiny,].
-esarma(X, R):- \+arma_excepcional(X), R = ['No', X, no, es, un, arma, en, destiny,].
+esarma(X, R):- arma_excepcional(X), R = ['Si', X, es, un, arma, en, destiny].
+esarma(X, R):- \+arma_excepcional(X), R = ['No', X, no, es, un, arma, en, destiny].
 
 
 
@@ -323,4 +396,3 @@ replace0([I|Index], Input, N, Resp, R):-
 	select(N, Resp, Atom, R1),
 	N1 is N + 1,
 	replace0(Index, Input, N1, R1, R),!.
-
