@@ -224,7 +224,7 @@ sintoma(polio, dolor_muscular).
 sintoma(polio, debilidad).
 sintoma(polio, fatiga).
 sintoma(polio, rigidez_en_el_cuello).
-sintoma(polio, parálisis).
+sintoma(polio, paralisis).
 
 
 % Hechos sobre las causas y factores de riesgo de la polio
@@ -250,6 +250,57 @@ template([cuales, son, los, sintomas, de, el, polio, '?'], ['Los síntomas de la
 template([cuales, son, las, causas, de, el, polio, '?'], ['Las principales causas de la polio incluyen la infección por el virus de la polio, la falta de vacunación, el contacto con personas enfermas y condiciones insatisfactorias de saneamiento.'], []).
 
 template([como, se, trata, el, polio, '?'], ['El tratamiento de la polio puede incluir fisioterapia, cuidados respiratorios, apoyo nutricional, medicamentos para aliviar síntomas y vacunación preventiva.'], []).
+
+template([tengo, s(), que,es, '?'], [flagpolio],[1]).
+
+espolio(X, R):- sintoma(_,X), R = [ X, es, un, sintoma, de, polio, es, probable, que, lo, tenga].
+espolio(X, R):- \+sintoma(_,X), R = [X, no, es, un, sintoma, del, polio, ., consulte, a, su, medico].
+
+% es un polio:
+replace0([I|_], Input, _, Resp, R):-
+    nth0(I, Input, Atom),
+    nth0(0, Resp, X),
+    X == flagpolio,
+    espolio(Atom, R).
+
+
+%%%%para_multi_sintomas
+
+
+ template([tengo, s(_), ',', (_), y, (_), que, tengo, '?'], [flagVariosintomas], [1, 3, 5]).
+
+multisintomas(X, Y, Z, R):- multi_sintoma(X, Y, Z), R = [ X, Y, y, Z, son, sintomas, del, polio, ., "Por favor consulte a su medico."].
+multisintomas(X, Y, Z, R):- \+multi_sintoma(X, Y, Z), R = [ X, Y, y, Z, no, son, sintomas, del, polio, ., "Si tiene sintomas, le recomiendo consultar a un medico."].
+multisintomas(X, Y, Z, R):- \+multi_sintoma(X, Y, Z), R = [ X, Y, y, Z, algunos, son, sintomas, del, polio, ., "Le recomiendo consultar a un medico."].
+
+multi_sintoma(X, Y, Z) :- sintoma(polio, X), sintoma(polio, Y), sintoma(polio, Z).
+
+
+
+
+% candida multisintoma
+replace0([I,J,K|_], Input, _, Resp, R):-
+	nth0(I, Input, Atom),
+	nth0(0, Resp, X),
+	X == flagVariosintomas,
+	nth0(J, Input, Atom2),
+	nth0(0, Resp, Y),
+	Y == flagVariosintomas,
+	nth0(K, Input, Atom3),
+	nth0(0, Resp, Z),
+	Z == flagVariosintomas,
+	multisintomas(Atom, Atom2, Atom3, R).
+
+
+% es un polio:
+replace0([I|Index], Input, N, Resp, R):-
+    nth0(I, Input, Atom),
+    select(N, Resp, Atom, R1),
+    N1 is N + 1,
+    replace0(Index, Input, N1, R1, R).
+
+replace0([], _, _, Resp, Resp).
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -396,3 +447,4 @@ replace0([I|Index], Input, N, Resp, R):-
 	select(N, Resp, Atom, R1),
 	N1 is N + 1,
 	replace0(Index, Input, N1, R1, R),!.
+
