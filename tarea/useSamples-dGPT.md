@@ -31,6 +31,17 @@ cuales son las causas de el polio?
 como se trata el polio?
 ```
 
+
+
+```
+tengo X que es?
+```
+
+
+```
+tengo X , Y , Z , que tengo?
+```
+
 ### Destiny
 
 ```
